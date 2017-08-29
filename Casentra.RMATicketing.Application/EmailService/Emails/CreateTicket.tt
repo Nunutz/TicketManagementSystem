@@ -1,0 +1,66 @@
+﻿<#@ template language="C#" #>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Ticket Creation Email</title>
+</head>
+<body>
+	
+	<p><b>Bonjour,</b></p>
+	<p>
+	 Veuillez nous retourner le bon de retour ci-joint dûment complété, accompagné de votre téléphone dans son emballage d'origine accompagné de tous ses accessoires indiqués lors de l’enregistrement de votre produit à l’adresse indiquée dans le bon de retour : 
+	</p>
+	
+	<p> 
+	<b>N'oubliez pas : </b><br/>
+	 <p>
+		1- D'indiquer le numéro IMEI de votre produit(que vous trouverez au dos du téléphone ou au dos de l’emballage), le numéro de votre commandeet d'indiquer votre adresse mail, votre adresse postale ainsi que votre numéro de téléphone.
+	 </p>
+	<p>
+		2- De décrire le problème rencontré et de désactiver votre code PIN ou tout verrouillage de votre smartphone. La présence d'un compte icloud verrouille systématiquement les paramètres de votre iPhone et empêche de cefait, de traiter les pannes de mises à jour, de logiciel, de wifi ou de réseau. Pour cette raison, nous vous demandons de le supprimer avant envoi.
+	 </p>
+	 <p>
+		3- De désactiver votre code icloud ainsi que tout code de verrouillage pouvant bloquer votre téléphone. Vous pouvez désactiver votre compte icloud directement depuis votre pc via le site icloud.com. Tout compte iCloud et verrouillage empêche le test post réparation du téléphone.
+	 </p>
+	  <p>
+		<b style='color:RED;text-align:jutify;'>
+		 <p> TOUT TELEPHONE ENVOYE AVEC UN COMPTE ICLOUD NE SERA PAS REPARABLE OU TESTE SUITE A LA REPARATION. MERCI DE DEVERROUILLER VOTRE COMPTE ICLOUD OU CODE PIN. </p>
+		 <p> SI VOUS NE POUVEZ LE DESACTIVER, MERCI D4INDIQUER LE COMPTE ET MOT DE PASSE ASSOCIE DANS LE FORMULAIRE DE RETOUR. </p>
+		</b>
+	 </p>
+	<p>
+		4- De bien protéger votre produit durant l'envoi. Nous ne pourrons être tenu comme responsables pour la réception de produits cassés. Les produits reçus cassés ne seront pas pris en charge ou suite à l’acceptation d’un devis.
+	 </p>
+	 <p>
+		5- De joindre votre fiche de suivis dûment remplie à votre colis. Tout produit reçu sans fiche de suivis sera refusé. 
+	 </p>
+
+	 <p>
+	 <b>Votre produit : </b><br/>
+	  <p style='padding-left:20px;>
+
+	     <p>1-	Sera traité sous 7 jours à 1mois pour les iPhone d'occasions. Le technicien en charge de vos réparations ne vous contactera qu'en cas de besoin.</p>
+		
+		 <p>2-  Sera échangé contre un modèle équivalent, uniquement en cas de panne irréparable.</p>
+		
+		 <p> &nbsp;&nbsp;- La carte Sim n'est pas nécessaire. Pensez à bien protéger votre iPhone. Je vous invite aussi à scotcher le couvercle de votre boîtier avec sa base afin qu'il ne s'ouvre pas durant le transport. </p>
+		 
+		 <p> &nbsp;&nbsp;- De même, notre atelier ne s'occupant que de la réparation et non de la vente de téléphones, nous ne disposons pas de stock permettant le prêt d'un téléphone de courtoisie. </p>
+	
+		 <p> &nbsp;&nbsp;- Votre numéro de retour vous sera communiqué directement par colissimo. Votre numéro de portable ainsi que votre adresse mail doivent donc figurer sur votre fiche de retour. </p>
+		 
+		 <p> &nbsp;&nbsp;- Les frais de retour restent à votre charge. </p>
+
+	  </p>
+	 </p>
+
+	</p>
+	<p>Note : <# Write(Note); #>,</p>
+	
+	<br/>
+	<p>Cordialement</p>
+	
+    <p>L’équipe SUIVI-RMA</p>
+	
+</body>
+</html>

@@ -1,0 +1,145 @@
+﻿@using Abp.Timing
+@using Abp.Web.Mvc.Extensions
+@*
+    IMPORTANT NOTES FROM ASP.NET BOILERPLATE:
+
+    This _Layout.cshtml is not used actually. It's left here if you want to add some classic style (MPA)
+    pages to your application.
+
+    See App/Main/views/layout/layout.cshtml for Angular application's layout page.
+*@
+@{
+    SetAntiForgeryCookie();
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SuiVi-RMA : Ticketing Application</title>
+
+    <link rel="shortcut icon" href="~/favicon.png">
+
+    @Html.IncludeStyle("~/Content/themes/base/all.css")
+    @Html.IncludeStyle("~/Content/bootstrap-cosmo.min.css")
+    @Html.IncludeStyle("~/Content/font-awesome.min.css")
+    @Html.IncludeStyle("~/Content/toastr.min.css")
+    @Html.IncludeStyle("~/Content/flags/famfamfam-flags.css")
+    @Html.IncludeStyle("~/Scripts/sweetalert/sweet-alert.css")
+    @Html.IncludeStyle("~/Content/assets/css/style.css")
+
+  
+
+    <!-- Icons CSS -->
+    <link href="~/Content/assets/css/icons.css" rel="stylesheet">
+
+    @RenderSection("Styles", false)
+
+    <script type="text/javascript">
+        //This is used to get the application's root path from javascript. It's useful if you're running application in a virtual directory under IIS.
+        var abp = abp || {}; abp.appPath = '@ApplicationPath';
+    </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        @Html.IncludeScript("~/Scripts/others/html5shiv.js")
+        @Html.IncludeScript("~/Scripts/others/respond.min.js")
+    <![endif]-->
+
+
+    @Html.IncludeScript("~/Abp/Framework/scripts/utils/ie10fix.js")
+    @Html.IncludeScript("~/Scripts/modernizr-2.8.3.js")
+
+    @Html.IncludeScript("~/Scripts/json2.min.js")
+    @Html.IncludeScript("~/Scripts/jquery-2.2.0.min.js")
+    @Html.IncludeScript("~/Scripts/jquery-ui-1.11.4.min.js")
+    @Html.IncludeScript("~/Scripts/bootstrap.min.js")
+
+    @Html.IncludeScript("~/Scripts/jquery.validate.min.js")
+    @Html.IncludeScript("~/Scripts/jquery.blockUI.js")
+    @Html.IncludeScript("~/Scripts/toastr.min.js")
+    @Html.IncludeScript("~/Scripts/others/spinjs/spin.js")
+    @Html.IncludeScript("~/Scripts/others/spinjs/jquery.spin.js")
+    @Html.IncludeScript("~/Scripts/sweetalert/sweet-alert.min.js")
+
+    <script src="~/Content/assets/js/metisMenu.min.js"></script>
+  
+
+    @Html.IncludeScript("~/Abp/Framework/scripts/abp.js")
+    @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.jquery.js")
+    @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.toastr.js")
+    @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.blockUI.js")
+    @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.spin.js")
+    @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.sweet-alert.js")
+
+    <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
+    <script src="~/api/AbpServiceProxies/GetAll?v=@(Clock.Now.Ticks)"></script>
+    <script src="~/AbpScripts/GetScripts?v=@(Clock.Now.Ticks)" type="text/javascript"></script>
+
+    @RenderSection("Scripts", false)
+</head>
+<body>
+    <div id="page-wrapper">
+        <!-- Top Bar Start -->
+        <div class="topbar">
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <div class="">
+                    <a href="/" class="logo">
+                        <img src="~/Content/assets/images/logo_rma.png" alt="logo" class="logo-lg" />
+                    </a>
+                </div>
+            </div>
+            <!-- Top navbar -->
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container">
+                    <div class="">
+                       <!-- Top nav left menu -->
+                        <ul id="french" class="nav navbar-nav hidden-sm hidden-xs top-navbar-items">
+                            <li id="1"><a href="/account/login">Login</a></li>                                                     
+                        </ul>
+                       
+
+                    </div>
+                </div> <!-- end container -->
+            </div> <!-- end navbar -->
+        </div>
+        <!-- Top Bar End -->
+        <!-- Page content start -->
+        <div id="page-right-content">
+            <!--left navigation start-->
+            <!--left navigation end-->
+            <!-- START PAGE CONTENT -->
+
+            <div class="container">
+                <div class="row">
+                    @RenderBody()
+                </div>
+                <!--end row -->
+
+
+            </div>
+            <!-- end container -->
+            <div class="footer">
+                <div class="pull-right hidden-xs">
+                    <strong class="text-custom">
+                        @*<a href="http://www.casentra.com"> Developed by Casentra.com </a>*@
+                    </strong>.
+                </div>
+                <div>
+                    <strong>Suivi RMA </strong> - Copyright &copy; @DateTime.Now.Year 
+                </div>
+            </div> <!-- end footer -->
+            <!-- End #page-right-content -->
+        </div>
+        <!-- end .page-contentbar -->
+    </div>
+    <!-- End #page-wrapper -->
+
+
+</body>
+</html>

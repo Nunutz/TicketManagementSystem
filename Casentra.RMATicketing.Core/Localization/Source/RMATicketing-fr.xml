@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="fr">
+  <texts>
+    <text name="HomePage" value="Accueil" />
+    <text name="About" value="A propos" />
+    <text name="WellcomeMessage" value="Bienvenue sur RMATicketing !" />
+    
+    <text name="FormIsNotValidMessage" value="Le formulaire n'est pas valide. Veuillez le corriger." />
+    <text name="TenantNameCanNotBeEmpty" value="Le nom de client (tenant) doit être renseigné." />
+
+    <text name="InvalidUserNameOrPassword" value="Nom d'utilisateur ou mot de passe non valide." />
+    <text name="ThereIsNoTenantDefinedWithName{0}" value="Il n'y a aucun nom de client (tenant) correspondant à {0}" />
+    <text name="TenantIsNotActive" value="Le client (tenant) {0} n'est pas actif." />
+    <text name="UserIsNotActiveAndCanNotLogin" value="L'utilisateur {0} n'est pas actif ou ne peut pas s'authentifier." />
+    <text name="PleaseEnterLoginInformation" value="Veuillez entrer vos informations d'authentification" />
+    <text name="TenancyName" value="Nom du client (tenant)" />
+    <text name="UserNameOrEmail" value="Nom d'utilisateur ou email" />
+    <text name="Password" value="Mot de passe" />
+    <text name="RememberMe" value="Se rappeler de moi" />
+    <text name="LogIn" value="Se connecter" />
+
+    <text name="LoginFailed" value="Echec d'authentification !" />
+
+    <text name="NameSurname" value="Nom de famille" />
+    <text name="UserName" value="Nom d'utilisateur" />
+    <text name="Name" value="Prénom" />
+    <text name="Surname" value="Nom de famille" />
+    <text name="EmailAddress" value="Adresse email" />
+
+    <text name="Tenants" value="Clients (tenants)" />
+    <text name="SavedSuccessfully" value="Enregistrement réussi" />
+    <text name="CreateNewTenant" value="Créer un nouveau client (tenant)" />
+    <text name="AdminEmailAddress" value="Adresse email de l'administrateur" />
+    <text name="Save" value="Valider" />
+    <text name="Cancel" value="Annuler" />
+    <text name="TenantName_Regex_Description" value="Le nom de client (tenant) doit comporter au moins 2 caractères et commencer par une lettre suivie d'autres lettres, chiffres ou tirets." />
+    <text name="DefaultPasswordIs" value="Le mot de passe par défaut est {0}" />
+    <text name="CanBeEmptyToLoginAsHost" value="Peut être laissé vide pour s'authentifier en tant qu'hébergeur (host)." />
+    <text name="Register" value="S'enregistrer" />
+    <text name="OrLoginWith" value="Ou s'authentifier avec" />
+    <text name="WaitingForActivationMessage" value="Votre compte est en attente d'activation par l'administrateur du système." />
+    <text name="TenantSelection" value="Sélection du client (tenant)" />
+    <text name="TenantSelection_Detail" value="Veuillez choisir l'un de ces clients (tenants) suivants." />
+    <text name="Logout" value="Déconnexion" />
+
+    <!--application captions-->
+
+    <text name="Home" value="Home" />
+    <text name="CreateTicket" value="PARTICULIER" />
+    <text name="ProfessionaTicket" value="PROFESSIONNEL" />
+    <text name="AboutUs" value="About Us" />
+    <text name="ContactUs" value="Contact Us" />
+    <text name="Create" value="Create" />
+
+
+    <text name="Firstname" value="Prénom" />
+    <text name="Lastname" value="Nom" />
+    <text name="Address" value="Adresse" />
+    <text name="City" value="Ville" />
+    <text name="ZipCode" value="Code postale" />
+    <text name="PhoneNumber" value="Numero de téléphone" />
+    <text name="MobilePhone" value="Numero de portable" />
+    <text name="EmailID" value="Adresse email" />
+    <text name="PurchasedDate" value="Date d'achat" />
+    <text name="Boughtat" value="Plateforme d'achat" />
+
+    <text name="BrandName" value="Marque" />
+    <text name="ProductName" value="Modèle" />
+
+    <text name="PhoneColor" value="Couleur" />
+    <text name="Capacity" value="Capacité de stockage" />
+    <text name="IMEINumber" value="Numero IMEI" />
+    <text name="PhonePassword" value="Code PIN" />
+    <text name="iCloudAddress" value="Compte iCloud" />
+    <text name="iCloudPassword" value="Mot de passe iCloud" />
+    <text name="Accessories" value="Accessoires fournis" />
+
+    <text name="PhonesCondition" value="Etat du téléphone" />
+    <text name="PhonesProblem" value="Probleme rencontré" />
+    <text name="IssueSuummary" value="Détails" />
+    <text name="SubmitTicket" value="Validation" />
+
+    <text name="Priority" value="Priority" />
+    <text name="Status" value="Status" />
+    <text name="Note" value="Note/Cost/Quotation" />
+    <text name="ClosedDate" value="Close the ticket" />
+    <text name="PreviousNote" value="Previous Note" />
+    
+   
+    <text name="TicketNo" value="TicketNo" />
+    <text name="CreatedDate" value="Created Date" />
+    <text name="UpdateTicket" value="Update Ticket" />
+    <text name="TicketClosingDate" value="Ticket Closed On" />
+    <text name="Date" value="Date" />
+    <text name="Notetable" value="Note" />
+    <text name="User" value="User" />
+    <text name="CustomerName" value="Customer Name" />
+    <text name="Action" value="Action" />
+
+    <text name="PhoneLocation" value="Phone Location" />
+    <text name="NoofMobiles" value="No.of.Mobiles" />
+    <text name="TrackingNumber" value="TrackingNumber" />
+
+
+    <text name="ImeiNumbers" value="IMEIs" />
+    <text name="Private" value="PARTICULIER" />
+    <text name="Professional" value="CLIENT PRO" />
+    <text name="Trading" value="TRADING" />
+    <text name="DataEntry" value="Data Entry" />
+    <text name="Report" value="Report" />
+
+
+    <text name="ShopName" value="Magasion" />
+    <text name="Casenumber" value="Numero de dossier" />
+
+
+  </texts>
+</localizationDictionary>

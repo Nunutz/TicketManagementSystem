@@ -1,0 +1,36 @@
+﻿
+<div>
+    <form name="createForm" role="form" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <span>Problem</span>
+            </h4>
+        </div>
+        <div class="modal-body">
+
+            <div class="form-group">
+                <label>Problem Name [English]</label>
+                <input auto-focus class="form-control" type="text" name="problemName" ng-model="vm.problem.name" required maxlength="50" >
+
+                <label>Problem Name [French] </label>
+                <input auto-focus class="form-control" type="text" name="frenchName" ng-model="vm.problem.frenchName" required maxlength="50">
+
+                <label>Problem Name [Chinese]</label>
+                <input auto-focus class="form-control" type="text" name="chinesName" ng-model="vm.problem.chinesName" required maxlength="50">
+
+            </div>
+            <div>
+                <span class="help-block text-danger" ng-show="!createForm.problemName.$valid && createForm.problemName.$dirty">Invalid</span>
+                <span class="help-block text-danger" ng-show="!createForm.frenchName.$valid && createForm.frenchName.$dirty">Invalid</span>
+                <span class="help-block text-danger" ng-show="!createForm.chinesName.$valid && createForm.chinesName.$dirty">Invalid</span>
+
+            </div>
+
+            
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" ng-click="vm.cancel()">@L("Cancel")</button>
+            <button type="submit" class="btn btn-success" ng-click="vm.save()" ng-disabled="createForm.$invalid"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+        </div>
+    </form>
+</div>

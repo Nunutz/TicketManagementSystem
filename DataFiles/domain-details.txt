@@ -1,0 +1,11 @@
+https://my.interserver.net/login.php
+ID: developper@nunutz.com
+pwd: Temp777
+The domain name is suivi-rma.com
+you can use it as project name
+
+
+SQLServer
+
+UserName: SuiViRMATicketing
+pwd: Temp777!

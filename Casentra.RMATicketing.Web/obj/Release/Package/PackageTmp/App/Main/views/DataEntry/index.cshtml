@@ -1,0 +1,270 @@
+﻿<div ng-controller="app.views.dataentry.index as vm">
+    
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="row">
+                <h4> Brands</h4>
+                <button ng-click="vm.openBrandCreationModal()" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Create</button>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="brand in vm.brands">
+                            <td>
+                                <div ng-hide="vm.editingBrandData[brand.id]">{{brand.id}} </div>
+
+
+                            </td>
+
+                            <td>
+
+                                <div ng-hide="vm.editingBrandData[brand.id]">{{brand.name}} </div>
+
+                                <div ng-show="vm.editingBrandData[brand.id]">
+                                    <input type="text" ng-model="brand.name" required maxlength="60" />
+                                </div>
+                            </td>
+                            <td>
+                                <button class="btn btn-success" ng-hide="vm.editingBrandData[brand.id]" ng-click="vm.modifyBrand(brand)">Modify</button>
+                                <button class="btn btn-info" ng-show="vm.editingBrandData[brand.id]" ng-click="vm.updateBrand(brand)">Update</button>
+
+                                <button class="btn btn-danger" ng-hide="vm.editingBrandData[brand.id]" ng-click="vm.removeBrand(brand)">Remove</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">     
+        <div class="col-lg-12">
+            <div class="row">
+                <h4> Products</h4>
+                <button ng-click="vm.openProductCreationModal()" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Create</button>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Brand</th>
+                            <th>Name</th>
+                            <th>Action </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="product in vm.products">
+                            <td>
+                               
+                                <div ng-hide="vm.editingProductData[product.id]">{{product.id}} </div>
+                            </td>
+                            <td>
+                                {{product.brand}}
+                                <input type="hidden" ng-model="product.brandId" />
+                            </td>
+                            <td>
+                                <div ng-hide="vm.editingProductData[product.id]">{{product.name}} </div>
+
+                                <div ng-show="vm.editingProductData[product.id]">
+                                    <input type="text" ng-model="product.name" required maxlength="60" />
+                                </div>
+                            </td>
+                            <td>
+                                <button class="btn btn-success" ng-hide="vm.editingProductData[product.id]" ng-click="vm.modifyProduct(product)">Modify</button>
+                                <button class="btn btn-info" ng-show="vm.editingProductData[product.id]" ng-click="vm.updateProduct(product)">Update</button>
+                                <button class="btn btn-danger" ng-hide="vm.editingProductData[product.id]" ng-click="vm.removeProduct(product)">Remove</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+         
+    <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <h4>Accessories</h4>
+                    <button ng-click="vm.openaccessoryCreationModal()" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Create</button>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name [English]</th>
+                                <th>Name [French]</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="accesory in vm.accessories">
+                                <td>
+                                    <div ng-hide="vm.editingAccesoryData[accesory.id]">{{accesory.id}} </div>
+                                </td>
+                                <td>
+                                    <div ng-hide="vm.editingAccesoryData[accesory.id]">{{accesory.name}} </div>
+                                    <div ng-show="vm.editingAccesoryData[accesory.id]">
+                                        <input type="text" ng-model="accesory.name" required maxlength="60" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div ng-hide="vm.editingAccesoryData[accesory.id]">{{accesory.frenchName}} </div>
+                                    <div ng-show="vm.editingAccesoryData[accesory.id]">
+                                        <input type="text" ng-model="accesory.frenchName" required maxlength="60" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn btn-success" ng-hide="vm.editingAccesoryData[accesory.id]" ng-click="vm.modifyAccesory(accesory)">Modify</button>
+                                    <button class="btn btn-info" ng-show="vm.editingAccesoryData[accesory.id]" ng-click="vm.updateAccesory(accesory)">Update</button>
+
+                                    <button class="btn btn-danger" ng-hide="vm.editingAccesoryData[accesory.id]" ng-click="vm.removeAccesory(accesory)">Remove</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+                    
+        </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            
+                <div class="row">
+                    <h4>Bought At</h4>
+                    <button ng-click="vm.openboughAtCreationModal()" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Create</button>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name [English]</th>
+                                <th>Name [French]</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="boughtat in vm.boughtats">
+                                <td>
+                                    <div ng-hide="vm.editingBoughtAtData[boughtat.id]">{{boughtat.id}} </div>
+                                </td>
+                                <td>
+                                    <div ng-hide="vm.editingBoughtAtData[boughtat.id]">{{boughtat.name}} </div>
+                                    <div ng-show="vm.editingBoughtAtData[boughtat.id]">
+                                        <input type="text" ng-model="boughtat.name" required maxlength="60" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div ng-hide="vm.editingBoughtAtData[boughtat.id]">{{boughtat.frenchName}} </div>
+                                    <div ng-show="vm.editingBoughtAtData[boughtat.id]">
+                                        <input type="text" ng-model="boughtat.frenchName" required maxlength="60" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn btn-success" ng-hide="vm.editingBoughtAtData[boughtat.id]" ng-click="vm.modifyBoughtAt(boughtat)">Modify</button>
+                                    <button class="btn btn-info" ng-show="vm.editingBoughtAtData[boughtat.id]" ng-click="vm.updateBoughtAt(boughtat)">Update</button>
+                                    <button class="btn btn-danger" ng-hide="vm.editingBoughtAtData[boughtat.id]" ng-click="vm.removeBoughtAt(boughtat)">Remove</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+         
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <h4>Spares</h4>
+                <button ng-click="vm.openSpareCreationModal()" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Create</button>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name [English]</th>
+                            <th>Name [French]</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="spare in vm.spares">
+                            <td>
+                                <div ng-hide="vm.editingSparesData[spare.id]">{{spare.id}} </div>
+                            </td>
+                            <td>
+                                <div ng-hide="vm.editingSparesData[spare.id]">{{spare.name}} </div>
+                                <div ng-show="vm.editingSparesData[spare.id]">
+                                    <input type="text" ng-model="spare.name" required maxlength="60" />
+                                </div>
+                            </td>
+                            <td>
+                                <div ng-hide="vm.editingSparesData[spare.id]">{{spare.frenchName}} </div>
+                                <div ng-show="vm.editingSparesData[spare.id]">
+                                    <input type="text" ng-model="spare.frenchName" required maxlength="60" />
+                                </div>
+                            </td>
+                            <td>
+                                <button class="btn btn-success" ng-hide="vm.editingSparesData[spare.id]" ng-click="vm.modifySpare(spare)">Modify</button>
+                                <button class="btn btn-info" ng-show="vm.editingSparesData[spare.id]" ng-click="vm.updateSpare(spare)">Update</button>
+                                <button class="btn btn-danger" ng-hide="vm.editingSparesData[spare.id]" ng-click="vm.removeSpare(spare)">Remove</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <h4> Phone's Problems</h4>
+                <button ng-click="vm.openProblemCreationModal()" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Create</button>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name [English]</th>
+                            <th>Name [French]</th>
+                            <th>Name [Chinese]</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="prob in vm.problems">
+                            <td>
+                                <div ng-hide="vm.editingData[prob.id]">{{prob.id}} </div>
+                            </td>
+                            <td>
+                                <div ng-hide="vm.editingData[prob.id]"> {{prob.name}}  </div>
+                                <div ng-show="vm.editingData[prob.id]">
+                                    <input type="text" ng-model="prob.name" required maxlength="60" />
+                                </div>
+
+                            </td>
+                            <td>
+
+                                <div ng-hide="vm.editingData[prob.id]">{{prob.frenchName}} </div>
+                                <div ng-show="vm.editingData[prob.id]"><input type="text" ng-model="prob.frenchName" required maxlength="60" /></div>
+
+                            </td>
+                            <td>
+                                <div ng-hide="vm.editingData[prob.id]"> {{prob.chinesName}} </div>
+                                <div ng-show="vm.editingData[prob.id]"><input type="text" ng-model="prob.chinesName" required maxlength="60" /></div>
+                            </td>
+                            <td>
+                                <button class="btn btn-success" ng-hide="vm.editingData[prob.id]" ng-click="vm.modify(prob)">Modify</button>
+                                <button class="btn btn-info" ng-show="vm.editingData[prob.id]" ng-click="vm.update(prob)">Update</button>
+
+                                <button class="btn btn-danger" ng-hide="vm.editingData[prob.id]" ng-click="vm.remove(prob)">Remove</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+  </div>

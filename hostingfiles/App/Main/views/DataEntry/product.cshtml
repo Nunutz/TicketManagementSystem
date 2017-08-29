@@ -1,0 +1,38 @@
+﻿
+<div>
+    <form name="createForm" role="form" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <span>Product</span>
+            </h4>
+        </div>
+        <div class="modal-body">
+
+            <div class="form-group">
+               
+                    <label>Brand List</label> <br />
+                    <div>
+                        <select ng-model="vm.product.brandId" class="md-priority">
+                            <option ng-repeat="brand in vm.brands" value="{{brand.id}}">{{brand.name}}</option>
+                        </select>
+                    </div>
+                
+             
+                    <label>Product Name</label>
+                    <input auto-focus class="form-control" type="text" name="productName" ng-model="vm.product.name" required maxlength="50">
+               
+                
+            </div>
+            
+            <div>
+                <span class="help-block text-danger" ng-show="!createForm.productName.$valid && createForm.productName.$dirty">Invalid</span>
+            </div>
+
+            
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" ng-click="vm.cancel()">@L("Cancel")</button>
+            <button type="submit" class="btn btn-success" ng-click="vm.save()" ng-disabled="createForm.$invalid"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+        </div>
+    </form>
+</div>

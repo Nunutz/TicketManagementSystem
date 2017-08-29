@@ -1,0 +1,93 @@
+﻿@model Casentra.RMATicketing.Web.Models.IMEI.ImeiModel
+
+@{
+    ViewBag.Title = "IMEI Upload";
+}
+
+@{
+    Layout = "~/Views/Shared/_LayoutCommon.cshtml";
+}
+
+@section Scripts{
+
+    <script type="text/javascript" src="~/Views/Professional/imei.js"></script>
+}
+
+<div class="container">
+
+    <form id="imeiForm" method="POST">
+        
+        <fieldset>
+            <div class="form-horizontal">
+                <div class="row" id="frmTicketForm">
+                    <div class="row">
+                        <div class="col-lg-4 text-center">
+
+                        </div>
+                        <div class="col-lg-4 text-center">
+                            <h4>IMEI Upload</h4>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="row">
+
+                        <div class="col-lg-4" style="color:lightgrey">
+                            
+                            <div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8">
+                            <div class="form-group" enctype="multipart/form-data">
+                                <label class="col-md-4 control-label  m-t-10">Upload Imei Numbers</label>
+                                <div class="col-md-5">
+                                    <input type="file" id="fileUpload" name="FileUpload" class="btn-success fileUpload " />
+                                    <input type="hidden" id="fileName" />
+                                    
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                   
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4">
+
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="form-group">
+                            <div class="col-md-4">
+
+                            </div>
+                            <div class="btn-group col-md-6">
+
+                              
+                                <button id="btnUpload" class="btn btn-success">Upload</button>
+
+                                <div class="col-md-4">
+                                    <a href="/professional/imei" class="btn btn-default btn-info">Cancel</a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+ 
+</div>
+
+    
+
+
+

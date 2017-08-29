@@ -1,0 +1,8 @@
+Development = 750
+Style+ theme= 30
+3 Language Preblems= 100
+Fetures added (Add + Edid+ Delete) = 120
+Deployment + Environtment setup =30
+Style+ theme= 30
+
+Sticker (IMEI, model, problem in french, English, chinese)

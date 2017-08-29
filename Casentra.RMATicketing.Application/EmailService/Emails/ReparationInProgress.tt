@@ -1,0 +1,23 @@
+﻿<#@ template language="C#" #>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Reparation In Progress Email</title>
+</head>
+<body>
+	
+	<p>Dear Bonjour,</p>
+	
+	<p>
+	Votre smartphone est actuellement en cours de réparation par notre technicien. Celui-ci sera réparé sous 48 heures. Si celui-ci est fonctionnel après nos tests, il vous sera retourné par Colissimo, vous serez alors alerté avec le numero de suivi du colis. Dans le cas contraire, il sera retourné chez notre fournisseur, vous serez également alerté.
+	</p>
+	<br/>
+	<p>Note : <# Write(Note); #>,</p>
+	<br/>
+	<br/>
+	<p>Cordialement</p>
+	
+    <p>Suivi-RMA.com</p>
+	
+</body>
+</html>

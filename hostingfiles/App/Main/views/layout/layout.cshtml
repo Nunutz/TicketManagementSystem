@@ -1,0 +1,161 @@
+﻿@using System.Threading
+@using System.Web.Optimization
+@using Abp.Timing
+@using Abp.Web.Mvc.Extensions
+@{
+    SetAntiForgeryCookie();
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SUIVI-RMA : Ticketing management system</title>
+
+    <link rel="shortcut icon" href="~/favicon.png">
+
+
+    @Html.IncludeStyle("~/Content/themes/base/all.css")
+    @Html.IncludeStyle("~/Content/bootstrap-cosmo.min.css")
+    @Html.IncludeStyle("~/Content/font-awesome.min.css")
+    @Html.IncludeStyle("~/Content/toastr.min.css")
+    @Html.IncludeStyle("~/Content/flags/famfamfam-flags.css")
+    @Html.IncludeStyle("~/Scripts/sweetalert/sweet-alert.css")
+    @Html.IncludeStyle("~/Content/assets/css/style.css")
+
+
+    <!-- DataTables -->
+    <link href="~/Content/assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/dataTables.colVis.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/fixedColumns.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Summernote css -->
+    <link href="~/Content/assets/plugins/summernote/summernote.css" rel="stylesheet" />
+
+
+    <!-- Icons CSS -->
+    <link href="~/Content/assets/css/icons.css" rel="stylesheet">
+    <!-- Custom styles for this template -->   
+
+
+    <script type="text/javascript">
+        //This is used to get the application's root path from javascript. It's useful if you're running application in a virtual directory under IIS.
+        var abp = abp || {}; abp.appPath = '@ApplicationPath';
+    </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="@Url.Content("~/Scripts/others/html5shiv.js")"></script>
+        <script src="@Url.Content("~/Scripts/others/respond.min.js")"></script>
+    <![endif]-->
+
+    
+    @Scripts.Render("~/Bundles/App/vendor/js")
+
+
+    <!-- Datatable js -->
+
+    <!-- js placed at the end of the document so the pages load faster -->
+   
+    <script src="~/Content/assets/js/metisMenu.min.js"></script>
+    <script src="~/Content/assets/js/jquery.slimscroll.min.js"></script>
+    <!-- Datatable js -->
+    <script src="~/Content/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.bootstrap.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/buttons.bootstrap.min.js"></script>
+
+    <script src="~/Content/assets/plugins/datatables/pdfmake.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/vfs_fonts.js"></script>
+    <script src="~/Content/assets/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/buttons.print.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.keyTable.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/responsive.bootstrap.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.scroller.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.colVis.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.fixedColumns.min.js"></script>
+
+    <script src="~/Scripts/ui-date.js"></script>
+    <script src="~/Content/assets/plugins/summernote/summernote.min.js"></script>
+
+  
+
+
+    <script>
+        //Localizing momentjs
+        moment.locale('@Thread.CurrentThread.CurrentUICulture.Name');
+    </script>
+
+    <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
+    <script src="~/api/AbpServiceProxies/GetAll?v=@(Clock.Now.Ticks)"></script>
+    <script src="~/api/AbpServiceProxies/GetAll?type=angular&v=@(Clock.Now.Ticks)"></script>
+    <script src="~/AbpScripts/GetScripts?v=@(Clock.Now.Ticks)" type="text/javascript"></script>
+
+    <!-- SignalR scripts -->
+    <script src="~/signalr/hubs"></script>
+
+    @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.signalr.js")
+
+    @Scripts.Render("~/Bundles/App/Main/js")
+    
+</head>
+<body>
+    @*<div ng-app="app">
+        <div ng-controller="app.views.layout as vm">
+            <div ng-include="'/App/Main/views/layout/header.cshtml'"></div>
+            <div class="container">
+                <div class="angular-animation-container row">
+                    <div ui-view class="shuffle-animation col-xs-12"></div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+    <div id="page-wrapper" ng-app="app">
+        <!-- Top Bar Start -->
+        <div class="topbar">
+            <!-- LOGO -->
+          
+            <!-- Top navbar -->
+            <div ng-include="'/App/Main/views/layout/header.cshtml'"></div>
+             <!-- end navbar -->
+        </div>
+        <!-- Top Bar End -->
+        <!-- Page content start -->
+        <div id="page-right-content">
+            <!--left navigation start-->
+            <!--left navigation end-->
+            <!-- START PAGE CONTENT -->
+
+            <div class="container">
+                <div class="angular-animation-container row">
+                    <div ui-view class="shuffle-animation col-xs-12"></div>
+                </div>
+                <!--end row -->
+            </div>
+            <!-- end container -->
+            <div class="footer">
+                <div class="pull-right hidden-xs">
+                    <strong class="text-custom">
+                        @*<a href="http://www.casentra.com"> Developed by Casentra.com </a>*@
+                    </strong>.
+                </div>
+                <div>
+                    <strong>Suivi RMA </strong> - Copyright &copy; 2017
+                </div>
+            </div> <!-- end footer -->
+            <!-- End #page-right-content -->
+        </div>
+        <!-- end .page-contentbar -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+﻿<div ng-controller="app.views.report.index as vm">
+    <div class="card-box widget-inline" >
+                <div class="row container">
+                    <div class="radio radio-info radio-inline">
+                        <input type="radio" id="private"   data-ng-model="vm.ticket.isProfessional" name="isProfessional" value="false" ng-checked="true">
+                        <label for="private"> Private Client </label>
+                    </div> &nbsp;
+                    <div class="radio radio-success radio-inline">
+                        <input type="radio" id="professional"  data-ng-model="vm.ticket.isProfessional" name="isProfessional" value="true">
+                        <label for="professional"> Professional Client </label>
+                        
+                    </div>
+                </div>
+
+                <div class="row container">
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label class="col-lg-3  control-label md-label ">From Date</label>
+                            <div class="col-lg-8">
+                                <div class="input-group md-label">
+                                    <input type="text" id="fromDate" ui-date="dateOptions" class="md-special-view-input" ng-model="vm.ticket.fromDate">
+                                    <span class="input-group-addon "><i class="fa fa-clock-o"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label md-label">To Date</label>
+                            <div class="col-lg-8">
+                                <div class="input-group md-label">
+                                    <input type="text" id="toDate" ui-date="dateOptions" class="md-special-view-input" ng-model="vm.ticket.toDate">
+                                    <span class="input-group-addon "><i class="fa fa-clock-o"></i></span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label md-label">@L("BrandName")</label>
+                            <div class="col-lg-8">
+                                <select data-ng-model="vm.ticket.modelId" class="view-dropdown">
+                                    <option ng-repeat="product in vm.products" value="{{product.id}}">{{product.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label md-label">@L("Status")</label>
+                            <div class="col-lg-8">
+                                <select ng-model="vm.ticket.statusId" class="view-dropdown">
+                                    <option ng-repeat="status in vm.ticketStatus" value="{{status.id}}">{{status.description}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row container">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-3">
+                        <div class="pull-right">
+                            <button id="btnSearch" class="btn btn-info" ng-click="vm.searchData(vm.ticket)">Search</button>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+        
+    <div class="row col-xs-12">
+            <div class="col-sm-12">
+                <div> No. Of. Search Results : {{vm.ticketData.length}}</div>
+                <hr />
+                <div class="m-b-20 table-responsive">
+                    <table class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                        <thead>
+                              <tr>
+                                <th>@L("TicketNo")</th>
+                                <th>@L("CustomerName")</th>
+                                <th>@L("EmailID")</th>
+                                <th>@L("IMEINumber")</th>
+                                <th>@L("MobilePhone")</th>
+                                <th>@L("ProductName")</th>
+                                <th>@L("BrandName")</th>
+                                <th>@L("Status")</th>
+                                <th>@L("CreatedDate")</th>
+                            </tr>
+                          
+                            <tr ng-repeat="ticket in vm.ticketData">
+                                <td>{{ticket.ticketNo}}</td>
+                                <td>{{ticket.customerName}}</td>
+                                <td>{{ticket.email}}</td>
+                                <td>{{ticket.imeiNumber}}</td>
+                                <td>{{ticket.mobileNumber}}</td>
+                                <td>{{ticket.product}}</td>
+                                <td>{{ticket.brand}}</td>
+                                <td>{{ticket.statusName}}</td>
+                                <td>{{ticket.createdDate}}</td>
+                                
+                            </tr>
+                        </thead>
+                    </table>
+                 </div>
+            </div>
+        </div>
+ </div>
+   

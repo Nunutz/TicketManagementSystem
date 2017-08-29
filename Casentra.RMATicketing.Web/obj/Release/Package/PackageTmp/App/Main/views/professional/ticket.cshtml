@@ -1,0 +1,382 @@
+﻿
+<div>
+    <section class="matter">
+        <div class="container">
+            <form name="ticketForm" role="form" novalidate class="form-validation">
+                <div id="divTicketInfo" >
+                    <div class="row alert alert-info alert-dismissible fade in">
+                        <div class="col-md-4">
+                            <div class="row">
+                                <label class="col-md-12 md-ticket-label">
+                                    @L("TicketNo") #: {{vm.ticket.ticketNo}}
+                                    <input hidden data-ng-model="vm.ticket.ticketNo" />
+                                    <input hidden data-ng-model="vm.ticket.isProfessional" />
+
+                                </label>
+                           
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="row">
+                                <label class="col-md-12 md-ticket-label">
+                                    @L("CreatedDate") #: {{vm.ticket.createdDate}}
+                                </label>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="row">
+                                <label class="col-md-12 md-ticket-label">
+                                    @L("Status") #: {{vm.ticket.ticketStatus}}
+                                </label>
+
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h4>Customer Details</h4>
+                            <div class="row">
+                                <label class="col-md-4 control-label md-label">
+                                    @L("ShopName")
+                                </label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="md-data-view-input" name="firstName" data-ng-model="vm.ticket.firstName" required />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-md-4 control-label md-label">
+                                    @L("Casenumber")
+                                </label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="md-data-view-input" name="lastName" data-ng-model="vm.ticket.lastName" required />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-md-4 control-label md-label">
+                                    @L("Address")
+                                </label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="md-data-view-input" name="address" data-ng-model="vm.ticket.address" required />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-md-4 control-label md-label">
+                                    @L("City")
+                                </label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="md-data-view-input" name="city" data-ng-model="vm.ticket.city" required />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-md-4 control-label md-label">
+                                    @L("ZipCode")
+                                </label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="md-data-view-input" name="zipcode" data-ng-model="vm.ticket.zipcode" required />
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <label class="col-md-4 control-label md-label">
+                                    @L("MobilePhone")
+                                </label>
+                                <div class="col-md-8">
+                                    <div class="input-group md-label">
+                                        <span class="input-group-addon"><i class="fa fa-mobile-phone"></i></span>
+                                        <input type="text" class="md-special-view-mobile-input" id="mobileNumber" name="mobileNumber" data-ng-model="vm.ticket.mobileNumber"
+                                               required maxlength="16">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-md-4 control-label  md-label">
+                                    @L("EmailID")
+                                </label>
+                                <div class="col-md-8">
+                                    <div class="input-group md-label">
+                                        <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                        <input type="text" class="md-special-view-input-email" id="email" name="email" data-ng-model="vm.ticket.email"
+                                               required maxlength="50">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <h4>Phone Details</h4>
+                            @*<div class="row">
+
+                            <label class="col-lg-4 control-label md-label">Priority</label>
+                            <div class="col-lg-8">
+                                <select  ng-model="vm.ticket.ticketPriorityId" class="view-dropdown">
+                                    <option  ng-repeat="priority in vm.ticketPriorities" value="{{priority.id}}" ng-selected="priority.id == vm.ticket.ticketPriorityId">{{priority.description}}</option>
+                                </select>
+                            </div>
+
+                    </div>
+
+                    <div class="row">
+                        <label class="col-lg-4 control-label md-label">Status</label>
+                        <div class="col-lg-8">
+                            <select ng-model="vm.ticket.ticketStatusId" class="view-dropdown">
+                                <option ng-repeat="status in vm.ticketStatuses" value="{{status.id}}" ng-selected="status.id == vm.ticket.ticketStatusId">{{status.description}}</option>
+                            </select>
+                        </div>
+                    </div>*@
+                            <div class="row">
+                                <label class="col-lg-4 control-label md-label">@L("PurchasedDate")</label>
+                                <div class="col-lg-8">
+                                    <div class="input-group md-label">
+                                        <input type="text" id="purchasedDate" ui-date="dateOptions" class="md-special-view-input" ng-model="vm.ticket.purchasedDate">
+                                        <span class="input-group-addon "><i class="fa fa-clock-o"></i></span>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-lg-4 control-label md-label">@L("Boughtat")</label>
+                                <div class="col-lg-8">
+                                                                    
+                                    <select class="view-dropdown" ng-model="vm.ticket.boughtAtId"
+                                            ng-options="bought.id as bought.description for bought in vm.boughtAtClients">
+                                    </select>
+                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-lg-4 control-label md-label">@L("BrandName")</label>
+                                <div class="col-lg-8">
+                                  
+                                    <select class="view-dropdown" ng-model="vm.ticket.brandId"
+                                            ng-options="brand.id as brand.name for brand in vm.brands"></select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-lg-4 control-label md-label">@L("ProductName")</label>
+                                <div class="col-lg-8">
+
+                                    <select class="view-dropdown" ng-model="vm.ticket.productId"
+                                            ng-options="product.id as product.name for product in vm.products"></select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <label class="col-lg-4 control-label md-label">@L("PhoneColor")</label>
+                                <div class="col-lg-8">
+                                    @*<select data-ng-model="vm.ticket.colorId" class="view-dropdown">
+                                        <option ng-repeat="color in vm.productColors" value="{{color.id}}" ng-selected="color.id == vm.ticket.colorId">{{color.description}}</option>
+                                    </select>*@
+
+                                    <select class="view-dropdown" ng-model="vm.ticket.colorId"
+                                            ng-options="color.id as color.description for color in vm.productColors"></select>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-lg-4 control-label md-label">@L("Capacity")</label>
+                                <div class="col-lg-8">
+                                    @*<select data-ng-model="vm.ticket.capacityId" class="view-dropdown">
+                                        <option ng-repeat="cap in vm.capacities" value="{{cap.id}}" ng-selected="cap.id == vm.ticket.capacityId">{{cap.description}}</option>
+                                    </select>*@
+
+                                    <select class="view-dropdown" ng-model="vm.ticket.capacityId"
+                                            ng-options="cap.id as cap.description for cap in vm.capacities"></select>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+                            <h4>Additional phone Info</h4>
+                            <div class="row">
+                                <label class="col-md-4 control-label md-label">
+                                    @L("IMEINumber")
+                                </label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="md-data-view-input" name="imeiNumber" data-ng-model="vm.ticket.imeiNumber" required />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-md-4 control-label md-label">
+                                    @L("PhonePassword")
+                                </label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="md-data-view-input" name="password" data-ng-model="vm.ticket.password" required />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-md-4 control-label md-label">
+                                    @L("iCloudAddress")
+                                </label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="md-data-view-input" name="icloudAddress" data-ng-model="vm.ticket.icloudAddress" required />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-md-4 control-label md-label">
+                                    @L("iCloudPassword")
+                                </label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="md-data-view-input" name="icloudPassword" data-ng-model="vm.ticket.icloudPassword" required />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-lg-4 control-label md-label">@L("Accessories")</label>
+                                <div class="col-lg-8">
+                                    @*<select data-ng-model="vm.ticket.accessoryId" class="view-dropdown">
+                                <option ng-repeat="acc in vm.accessories" value="{{acc.id}}"  ng-selected="acc.id == vm.ticket.accessoryId" >{{acc.description}}</option>
+                                     </select>*@
+                                    
+                                    <div ng-repeat="pro in vm.ticket.accessories.split(',')">
+                                        <span class="label label-success">
+                                            {{pro}}
+                                        </span>
+                                    </div>
+                                    <input hidden data-ng-model="vm.ticket.accessories" />
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-lg-4 control-label md-label">@L("PhonesCondition")</label>
+                                <div class="col-lg-8">
+                                    @*<select data-ng-model="vm.ticket.phoneConditionId" class="view-dropdown">
+                                        <option ng-repeat="condition in vm.phoneConditions" value="{{condition.id}}" ng-selected="condition.id == vm.ticket.phoneConditionId">{{condition.description}}</option>
+                                    </select>*@
+                                    <select class="view-dropdown" ng-model="vm.ticket.phoneConditionId"
+                                            ng-options="condition.id as condition.description for condition in vm.phoneConditions"></select>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-lg-4 control-label md-label">@L("PhonesProblem")</label>
+                                <div class="col-lg-8">
+                                    @*<select data-ng-model="vm.ticket.phoneProblemId" class="view-dropdown">
+                                      <option ng-repeat="prob in vm.phoneProblems" value="{{prob.id}}"  ng-selected="prob.id == vm.ticket.phoneProblemId">{{prob.description}}</option>
+                                     </select>*@
+                                    <div ng-repeat="pro in vm.ticket.phoneProblems.split(',')">
+                                        <span class="label label-success">
+                                            {{pro}}
+                                        </span>
+                                    </div>
+                                    <input hidden data-ng-model="vm.ticket.phoneProblems" />
+                                                                      
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="row"></div>
+                    <div class="row">
+                        <div class="alert alert-icon alert-warning alert-dismissible fade in" role="alert">
+                            <div> {{vm.ticket.issueSummary}}</div>
+                            <input hidden data-ng-model="vm.ticket.issueSummary" />
+                        </div>
+                    </div>
+
+                    <div class="row alert alert-success alert-dismissible fade in ">
+
+                        <div class="col-lg-4">
+                            <label class="col-lg-4 control-label md-label">@L("TrackingNumber")</label>
+                            <div class="col-lg-8">
+                                <input type="text" class="md-data-view-input" name="trackingNumber" data-ng-model="vm.ticket.trackingNumber"  />
+                             
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="col-lg-4 control-label md-label">@L("Status")</label>
+                            <div class="col-lg-8">
+                                    <select class="view-dropdown" ng-model="vm.ticket.ticketStatusId"
+                                        ng-options="status.id as status.description for status in vm.ticketStatuses"></select>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="control-label  md-label">@L("ClosedDate")</label>
+                            <div class="input-group md-label">
+                                <input type="text" id="closedDate" ui-date="dateOptions" class="md-special-view-input" ng-model="vm.ticket.closedDate">
+                                <span class="input-group-addon "><i class="fa fa-clock-o"></i></span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                    <div class="row alert alert-info alert-white alert-dismissible fade in">
+                        <div class="form-group">                                                   
+                          
+                                <label class="control-label">@L("Note")</label>
+                                 <textarea name="note" cols="10" rows="1" class="form-control input-sm" data-ng-model="vm.ticket.note"></textarea>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <label class="control-label md-label">@L("PreviousNote")</label>
+                            <input type="text" hidden="hidden" class="md-data-view-input" name="previousNote" data-ng-model="vm.ticket.previousNote" />
+                            <table class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th class="md-label">@L("Date")</th>
+                                        <th class="md-label">@L("Status")</th>
+                                        <th class="md-label">@L("Notetable")</th>
+                                        <th class="md-label">@L("User")</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="note in vm.ticket.previousNotes">
+                                        <td>#</td>
+                                        <td>{{ note.split(',')[0] }}</td>
+                                        <td>{{ note.split(',')[1] }}</td>
+                                        <td class="note-view">{{ note.split(',')[3] }}</td>
+                                        <td>{{ note.split(',')[2] }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                         
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-4">
+                                <button id="btnPrintEng" class="btn btn-info" ng-click="vm.printEng()">Print Sticker</button>                                
+                            </div>
+                            <div class="col-md-8">
+                                <div class="btn-group pull-right">                                    
+                                        &nbsp;
+                                        <button id="btnTicketIco" type="submit" class="btn btn-success waves-effect" ng-click="vm.save()"><i class="fa fa-floppy-o"></i></button>
+                                        <button id="btnTicket" type="submit" class="btn btn-success" ng-click="vm.save()">@L("UpdateTicket")</button>                                    
+                                        <div class="col-md-2">
+                                            <button class="btn btn-default btn-info" ng-click="vm.cancel()">
+                                                @L("Cancel")
+                                            </button>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                   </div>          
+            </form>
+
+            <div id="divPrintEng" style="display:none" >
+               <div style="border:solid 1px; border-color:black; width:226.77px;height:113.38px; font-size:10px;margin:1px;">
+                   <div>IMEI No  : {{vm.ticket.imeiNumber}}</div>
+                   <div>Model    : {{vm.ticket.productName}}</div>
+                   <div>Promblem : {{vm.ticket.phoneProblems}}</div>
+                   <div>Probleme : {{vm.ticket.phoneProblemsInfrench}}</div>
+                   <div>Promblem : {{vm.ticket.phoneProblemsInChinese}}</div>                     
+               </div>
+                
+            </div>
+
+        </div>
+    </section>
+
+</div>

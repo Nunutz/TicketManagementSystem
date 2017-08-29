@@ -1,0 +1,24 @@
+﻿<#@ template language="C#" #>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Reparation In Progress Email</title>
+</head>
+<body>
+	
+	<p>Dear Bonjour,</p>
+	
+	<p>
+	Après nos tests, votre smartphone n'est pas réparable dans notre centre SAV. Nous retournons donc le smartphone chez notre fournisseur afin de procéder à des solutions plus poussées. Nous reviendrons vers vous lorsque celui-ci sera receptionné par notre fournisseur.
+
+	</p>
+	<br/>
+	<p>Note : <# Write(Note); #>,</p>
+	<br/>
+	<br/>
+	<p>Cordialement</p>
+	
+    <p>Suivi-RMA.com</p>
+	
+</body>
+</html>

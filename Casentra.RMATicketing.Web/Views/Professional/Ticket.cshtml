@@ -1,0 +1,266 @@
+﻿@model Casentra.RMATicketing.Web.Models.Ticket.TicketProfModel
+@{
+    ViewBag.Title = "Professional ticket";
+}
+
+@section Scripts{
+
+    <script type="text/javascript" src="~/Views/Professional/professional.js?v=@DateTime.Now.Ticks"></script>
+
+}
+<div class="container">
+    <form id="ticketForm" method="post" >
+        @Html.AntiForgeryToken()
+        <fieldset>
+            <div class="form-horizontal">
+                <div class="row" id="frmTicketForm">
+                    <div class="row">
+
+                        <div class="col-lg-4 text-center">
+
+                        </div>
+                        <div class="col-lg-4 text-center">
+                            <h4>Demande de retour SAV</h4>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                            
+                            @Html.RouteLink("Switch to English", new { controller = "professional", action = "enticket" }, new { @class = "btn btn-default btn-info" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4" style="color:lightgrey">
+
+                            <h2>Informations personnelles</h2>
+                            <div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8">
+
+                            
+                            <br />
+                            <div >
+                                <span class="pull-right"> Veuillez télécharger ce fichier pour enregistrer vos Smartphones défectueux <a href="~/ExcelTemplate/frn/professionals-french.xlsx">Download</a> </span>
+                                <span class="pull-right"> Veuillez télécharger ce fichier pour enregistrer vos pièces détachées defectueuses <a href="~/ExcelTemplate/frn/FormulaireB2BSUIVI-RMA.xlsx">Download</a> </span> 
+
+                            </div>
+                            <br /><br />
+                            <h4 class="m-b-20 header-title"></h4>
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Prénom</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control input-sm" id="firstName" name="firstName" placeholder="Prénom"
+                                               required maxlength="60">
+                                    </div>
+                                    <span class="label label-warning">*requis</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Nom</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control  input-sm" id="lastName" name="lastName" placeholder="Nom"
+                                               required maxlength="60">
+                                    </div>
+                                    <span class="label label-warning">*requis</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Adresse</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control  input-sm" id="address" name="address" placeholder="Adresse"
+                                               required maxlength="60">
+                                    </div>
+                                    <span class="label label-warning">*requis</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Ville</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control  input-sm" id="city" name="city" placeholder="Ville"
+                                               required maxlength="60">
+                                    </div>
+                                    <span class="label label-warning">*requis</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Code postale</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control  input-sm" id="zipcode" name="zipcode" placeholder="Code postale"
+                                               required maxlength="60">
+                                    </div>
+                                    <span class="label label-warning">*requis</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Numero de portable</label>
+                                    <div class="col-md-5">
+                                        <div class="input-group m-t-10">
+                                            <span class="input-group-addon"><i class="fa fa-mobile-phone"></i></span>
+                                            <input type="tel" class="form-control input-sm" id="mobileNumber" name="mobileNumber" placeholder="Numero de portable"
+                                                   required maxlength="60">
+                                        </div>
+                                    </div>
+                                    <span class="label label-warning">*requis</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label  m-t-10">Adresse email</label>
+                                    <div class="col-md-5">
+                                        <div class="input-group m-t-10">
+                                            <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                            <input type="email" class="form-control  input-sm" id="emailId" name="emailId" placeholder="nom@domaine.com"
+                                                   required maxlength="60">
+
+                                        </div>
+                                    </div>
+                                    <span class="label label-warning">*requis</span>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-lg-4" style="color:lightgrey">
+                            
+                            
+                        </div>
+
+                        <div class="col-lg-8">
+                            <div  class="form-group" enctype ="multipart/form-data" >
+                                <label class="col-md-4 control-label  m-t-10">Fichier Excel Smartphones</label>
+                                <div class="col-md-5">
+                                    <input type="file" id="fileUpload" name="FileUpload" class="btn-success fileUpload " />
+                                    <input type="hidden" id="fileName"/>
+                                    <span id="spnError" class="label-warning">Incorrect excel file</span>
+                                    
+                                </div>
+                               
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-lg-4" style="color:lightgrey">
+                            
+                            <div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8">
+                            <div class="form-group" enctype="multipart/form-data">
+                                <label class="col-md-4 control-label  m-t-10">Fichier Excel Pièces Détachées</label>
+                                <div class="col-md-5">
+                                    <input type="file" id="fileUploadSpare" name="FileUpload" class="btn-success fileUpload " />
+                                    <input type="hidden" id="fileSpareName" />
+                                    <span id="spnSpareError" class="label-warning">Incorrect excel file</span>
+                                </div>
+                                
+
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-4" style="color:lightgrey">
+                            <h2>Détails à fournir</h2>
+                            <div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-lg-8">
+                            <br />
+                            <h4 class="m-b-20 header-title"></h4>
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Détails</label>
+                                    <div class="col-md-5">
+                                        <textarea id="issueSummary" name="issueSummary" cols="40" rows="5" placeholder="Détails supplémentaires concernant le problème rencontré" class="form-control input-sm"></textarea>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4">
+
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="form-group">
+                            <div class="col-md-4">
+
+                            </div>
+                            <div class="btn-group col-md-6">
+
+                                <button id="btnTicketIco" class="btn btn-success waves-effect "><i class="fa fa-floppy-o"></i></button>
+                                <button id="btnTicket" class="btn btn-success">Validation</button>
+
+                                <div class="col-md-4">
+                                    <a href="/professional/ticket" class="btn btn-default btn-info">Annulation</a>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+    <div class="modal fade" id="confirmationModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    @*<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>*@
+                    <h4 class="modal-title" id="exampleModalLabel">Demande de retour SAV- Validation</h4>
+                </div>
+                <div class="modal-body">
+                    Demande de retour SAV acceptée. Vous recevrez notre procedure de retour à l’adresse mail indiquée d’ici quelques instants 
+                </div>
+                <div class="modal-footer">
+                    <button id="btnConfirm" type="button" class="btn btn-info">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="errorModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Ticket Error</h4>
+                </div>
+                <div class="modal-body">
+                    Some error occured while uploading
+                </div>
+                <div class="modal-footer">
+                    <button id="btnCancel" type="button" class="btn btn-info">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+     $(document).ready(function() {
+            
+         $('#french').show();
+         $('#english').hide();
+         
+         $('#2').addClass("active"); //Add "active" class to selected tab
+                     
+     });
+ </script>

@@ -1,0 +1,442 @@
+﻿@model Casentra.RMATicketing.Web.Models.Ticket.TicketModel
+@{
+    ViewBag.Title = "Professional ";
+}
+
+@section Scripts{
+ 
+    <script type="text/javascript" src="~/Views/Private/client.js?v=@DateTime.Now.Ticks"></script>
+
+}
+<div class="container">
+    <form id="ticketForm" method="POST">
+        @Html.AntiForgeryToken()
+        <fieldset>
+            <div class="form-horizontal">
+                <div class="row" id="frmTicketForm">
+                    <div class="row">
+                        
+                        <div class="col-lg-4 text-center">
+
+                        </div>
+                        <div class="col-lg-4 text-center">
+                            <h4>Demande de retour SAV</h4>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                           @Html.RouteLink("Switch to English", new {controller="Private", action= "engclient"},new { @class = "btn btn-default btn-info" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4" style="color:lightgrey">
+
+                            <h2>Informations personnelles</h2>
+                            <div>
+                                    
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8">
+
+                            <br />
+                            <h4 class="m-b-20 header-title"></h4>
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Magasion</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control input-sm" id="firstName" name="firstName" placeholder="Magasion"
+                                               required maxlength="60">
+                                    </div>
+                                    <span class="label label-warning">*requis</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Numero de dossier</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control  input-sm" id="lastName" name="lastName" placeholder="Numero de dossier"
+                                               required maxlength="60">
+                                    </div>
+                                    <span class="label label-warning">*requis</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Adresse</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control  input-sm" id="address" name="address" placeholder="Adresse"
+                                               required maxlength="60">
+                                    </div>
+                                    <span class="label label-warning">*requis</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Ville</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control  input-sm" id="city" name="city" placeholder="Ville"
+                                               required maxlength="60">
+                                    </div>
+                                    <span class="label label-warning">*requis</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Code postale</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control  input-sm" id="zipcode" name="zipcode" placeholder="Code postale"
+                                               required maxlength="60">
+                                    </div>
+                                    <span class="label label-warning">*requis</span>
+                                </div>
+                            
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Numero de portable</label>
+                                    <div class="col-md-5">
+                                        <div class="input-group m-t-10">
+                                            <span class="input-group-addon"><i class="fa fa-mobile-phone"></i></span>
+                                            <input type="tel"  class="form-control input-sm" id="mobileNumber" name="mobileNumber" placeholder="Numero de portable"
+                                                   required maxlength="60">
+                                        </div>
+                                    </div>
+                                    <span class="label label-warning">*requis</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label  m-t-10">Adresse email</label>
+                                    <div class="col-md-5">
+                                        <div class="input-group m-t-10">
+                                            <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                            <input type="email" class="form-control  input-sm" id="emailId" name="emailId" placeholder="nom@domaine.com"
+                                                   required maxlength="60">
+                                         
+                                        </div>
+                                    </div>
+                                    <span class="label label-warning">*requis</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-4" style="color:lightgrey">
+                            <h2> Informations sur votre commande</h2>
+                            <div>
+                                    
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8">
+                            <br />
+                            <h4 class="m-b-20 header-title"></h4>
+                            <div class="row">
+                                
+
+                                <div class="form-group">
+
+                                    <label class="col-sm-4 control-label">Date d'achat</label>
+                                    <div class="col-sm-3">
+                                        <div class="input-group">
+
+                                            <input id="purchasedDate" name="purchasedDate" type="text" class="datepicker form-control input-sm" required data-date-format="dd/mm/yyyy" placeholder="jj/mm/aaaa">
+                                            <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+
+                                        </div><!-- input-group -->
+                                    </div>
+                                    <span class="label label-warning">*requis</span>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label class="col-sm-4 control-label">Plateforme d'achat</label>
+                                    <div class="col-sm-5">
+                                        @Html.DropDownList("BoughtAtId", (IEnumerable<SelectListItem>)Model.BoughtAts, new { @class = "form-control input-sm" })
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label class="col-sm-4 control-label">Marque</label>
+                                    <div class="col-sm-5">
+                                        @Html.DropDownList("BrandId", (IEnumerable<SelectListItem>)Model.Brands, new { @class = "form-control input-sm" })
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+
+                                    <label class="col-sm-4 control-label">Modèle</label>
+                                    <div class="col-sm-5">
+                                        @Html.DropDownList("ProductId", (IEnumerable<SelectListItem>)Model.Products, new { @class = "form-control input-sm" })
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label class="col-sm-4 control-label">Couleur</label>
+                                    <div class="col-sm-5">
+                                        @Html.DropDownList("ColorId", (IEnumerable<SelectListItem>)Model.ProductColors, new { @class = "form-control input-sm" })
+                                    </div>
+                                    
+                                </div>
+                                <div class="form-group">
+
+                                    <label class="col-sm-4 control-label">Capacité de stockage</label>
+                                    <div class="col-sm-5">
+                                        @Html.DropDownList("CapacityId", (IEnumerable<SelectListItem>)Model.Capacities, new { @class = "form-control input-sm" })
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-4" style="color:lightgrey">
+                            <h2> Informations complémentaires</h2>
+                            <div>
+                                   
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8">
+                            <br />
+                            <h4 class="m-b-20 header-title"></h4>
+                            <div class="row">
+                                <div class="form-group" >
+                                    <label class="col-md-4 control-label">Numero IMEI</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control input-sm" id="iemiNumber" name="iemiNumber" placeholder="Numero IMEI"
+                                               required maxlength="60">
+                                    </div>
+                                    <span class="label label-warning">*requis</span>
+                                </div>
+                                
+                               
+                                <div class="form-group" id="divICloudAddress">
+
+                                    <label class="col-md-4 control-label">Compte iCloud</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control input-sm" id="iCloudAddress"  name="iCloudAddress" placeholder="Compte iCloud"
+                                              required  maxlength="60">
+                                    </div>
+                                    <span class="label label-warning">*requis</span>
+                                </div>
+
+                                <div class="form-group" id="divICloudPassword">
+
+                                    <label class="col-md-4 control-label"> Mot de passe iCloud</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control input-sm" id="iCloudPassword" name="iCloudPassword" placeholder="Mot de passe iCloud"
+                                              required  maxlength="60">
+                                    </div>
+                                    <span class="label label-warning">*requis</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">
+                                        Cochez cette case si :
+                                        <input type="checkbox" id="chkiCloud">
+                                    </label>
+                                    <div class="col-md-5 alert alert-info">
+                                        - Vous n'avez pas de compte iCloud <br />
+                                        - Votre compte iCloud a été supprimé sur votre iPhone
+
+                                    </div>
+                                </div>
+                                <div class="form-group" id="divPin">
+
+                                    <label class="col-md-4 control-label">Code PIN</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control input-sm" id="phonePassword" name="phonePassword" placeholder="Code PIN"
+                                               required maxlength="20" minlength="2">
+                                    </div>
+                                    <span class="label label-warning">*requis</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">
+                                        Cochez cette case si :
+                                        <input type="checkbox" id="chkPinCode">
+                                    </label>
+                                    <div class="col-md-5 alert alert-info">
+                                        - Vous n’avez pas de code <br />
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label class="col-sm-4 control-label">Accessoires fournis</label>
+                                    <div class="col-sm-5">
+                                        
+                                       <div id="divAccessorylist" style="height: 160px; overflow: auto;border:1px solid #3db9dc; width:323px;">
+                                            @foreach (var names in @Model.Accesseries)
+                                            {
+                                                var checkBoxId = "chk" + names.Value;
+                                                var tdId = "td" + names.Value;
+                                                <table style="width:100%">
+                                                    <tr id="@tdId">
+                                                        <td style="width:2px; padding-left:5px">
+                                                            <input type="checkbox" id="@checkBoxId" class="chkaccessory checkbox-primary" data-text="@names.Text" value="@names.Value" />
+                                                        </td>
+                                                        <td  width="100px" class="input-sm">
+                                                            @names.Text
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            }
+                                        </div> 
+                                         <input hidden="hidden" id="hidAccessories">
+                                        <div class="label label-warning " id="spnAccessories"></div>
+                                    </div>
+                                    <span class="label label-warning">*requis</span>
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label class="col-sm-4 control-label">Etat du téléphone</label>
+                                    <div class="col-sm-5">
+                                        @Html.DropDownList("PhoneConditionId", (IEnumerable<SelectListItem>)Model.PhoneConditions, new { @class = "form-control input-sm" })
+                                    </div>
+                                   
+                                </div>
+                                <div class="form-group">
+
+                                    <label class="col-sm-4 control-label">Probleme rencontré</label>
+                                    <div class="col-sm-5">
+                                       
+                                        <div id="divproblemlist" style="height: 250px; overflow: auto;border:1px solid #3db9dc; width:323px;">
+                                            @foreach (var names in @Model.PhoneProblems)
+                                            {
+                                                var checkBoxId = "chk-prob" + names.Value;
+                                                var tdId = "td-prob" + names.Value;
+                                                <table style="width:100%">
+                                                    <tr id="@tdId">
+                                                        <td style="width:2px; padding-left:5px">
+                                                            <input type="checkbox" id="@checkBoxId" class="chkproblem checkbox-primary" data-text="@names.Text" value="@names.Value" />
+                                                        </td>
+                                                        <td  width="100px" class="input-sm">
+                                                            @names.Text
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            }
+                                        </div>  
+                                        <input hidden="hidden" id="hidProblems">
+                                        <input hidden="hidden" id="hidProblemIds">
+                                        <div class="label label-warning" id="spnProblems"></div>
+
+                                    </div>
+                                    <span class="label label-warning">*requis</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">
+                                        Cochez cette case si :
+                                        <input type="checkbox" id="chkProbSelect">
+                                    </label>
+                                    <div class="col-md-5 alert alert-info">
+                                        - Il s’agit d’une demande de retractation faite sous 14 jours à la reception du colis
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-4" style="color:lightgrey">
+                            <h2>Détails à fournir</h2>
+                            <div>
+                                   
+                            </div>
+
+                        </div>
+                        <div class="col-lg-8">
+                            <br />
+                            <h4 class="m-b-20 header-title"></h4>
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Détails</label>
+                                    <div class="col-md-5">
+                                        <textarea id="issueSummary" name="issueSummary" cols="40" rows="5" placeholder="Détails supplémentaires concernant le problème rencontré" class="form-control input-sm"></textarea>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4">
+
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="form-group">
+                            <div class="col-md-4">
+
+                            </div>
+                            <div class="btn-group col-md-6">
+
+                                <button id="btnTicketIco"  class="btn btn-success waves-effect "><i class="fa fa-floppy-o"></i></button>
+                                <button id="btnTicket"  class="btn btn-success">Validation</button>
+
+                                <div class="col-md-4">
+                                   <a href="/private/ticket" class="btn btn-default btn-info">Annulation</a>
+                       
+                                </div>
+                                
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            
+        
+
+   
+</div>
+            </fieldset>
+        </form>
+
+    <div class="modal fade" id="confirmationModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    @*<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>*@
+                    <h4 class="modal-title" id="exampleModalLabel">Demande de retour SAV- Validation</h4>
+                </div>
+                <div class="modal-body">
+                    Demande de retour SAV acceptée. Vous recevrez notre procedure de retour à l’adresse mail indiquée d’ici quelques instants 
+                </div>
+                <div class="modal-footer">
+                    <button id="btnConfirm" type="button" class="btn btn-info">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="errorModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Ticket Error</h4>
+                </div>
+                <div class="modal-body">
+                    Some error occured while updating ticket
+                </div>
+                <div class="modal-footer">
+                    <button id="btnCancel" type="button" class="btn btn-info">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+
+<script>
+     $(document).ready(function() {
+
+         $('#french').show();
+         $('#english').hide();
+         $('#3').addClass("active"); //Add "active" class to selected tab
+
+     });
+</script>
