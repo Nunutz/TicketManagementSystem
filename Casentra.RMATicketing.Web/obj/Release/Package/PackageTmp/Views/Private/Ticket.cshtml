@@ -13,7 +13,7 @@
         @Html.AntiForgeryToken()
         <fieldset>
             <div class="form-horizontal">
-                <div class="row" id="frmTicketForm">
+                <div class="row" >
                     <div class="row">
                         
                         <div class="col-lg-4 text-center">
@@ -22,8 +22,7 @@
                         <div class="col-lg-4 text-center">
                             <h4>Demande de retour SAV</h4>
                         </div>
-                        <div class="col-lg-4 text-center">
-                          
+                        <div class="col-lg-4 text-center">                          
                             @Html.RouteLink("Switch to English", new { controller = "Private", action = "enticket" }, new { @class = "btn btn-default btn-info" })
                         </div>
                     </div>
@@ -383,7 +382,6 @@
 
                                 <div class="col-md-4">
                                    <a href="/private/ticket" class="btn btn-default btn-info">Annulation</a>
-                       
                                 </div>
                                 
 
@@ -398,7 +396,7 @@
    
 </div>
             </fieldset>
-        </form>
+     </form>
 
     <div class="modal fade" id="confirmationModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -424,7 +422,10 @@
                     <h4 class="modal-title" id="exampleModalLabel">Ticket Error</h4>
                 </div>
                 <div class="modal-body">
-                    Some error occured while updating ticket
+                    Some error occured while updating ticket <br />
+                    <span id="spnError">
+
+                    </span>
                 </div>
                 <div class="modal-footer">
                     <button id="btnCancel" type="button" class="btn btn-info">Close</button>

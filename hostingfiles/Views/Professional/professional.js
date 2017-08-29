@@ -16,8 +16,10 @@
         $('#btnTicket').click(function (e) {
 
             if (validateInput() !== true)
-                return;
+                return false;
                       
+            $('#spnError').html("");
+
             e.preventDefault();
 
             abp.ui.setBusy(
@@ -45,7 +47,8 @@
                         $('#confirmationModel').modal();
                         abp.notify.info('Saved Successfully');
                     }
-                    else {                       
+                    else {
+                        $('#spnError').html(data);
                         $('#errorModel').modal();
                     }
                                            

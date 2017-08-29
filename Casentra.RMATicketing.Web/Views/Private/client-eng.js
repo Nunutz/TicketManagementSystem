@@ -25,6 +25,7 @@
 
         $('#btnTicket').click(function (e) {
 
+            $('#spnError').html("");
             if (validateInput() != true)
                 return false;
 
@@ -85,7 +86,7 @@
                         $('#confirmationModel').modal();
                         abp.notify.info('Saved Successfully');
                     } else {
-
+                        $('#spnError').html(data);
                         $('#errorModel').modal();
                     }
                 })
@@ -234,6 +235,10 @@
         $('#btnConfirm').click(function () {
             window.location.href = '/private/engclient';
 
+        });
+
+        $('#btnCancel').click(function () {
+            window.location.href = '/private/engclient';
         });
 
         function validateEmail(email) {

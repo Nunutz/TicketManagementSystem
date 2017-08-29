@@ -18,6 +18,8 @@
             if (validateInput() !== true)
                 return false;
                       
+            $('#spnError').html("");
+
             e.preventDefault();
 
             abp.ui.setBusy(
@@ -45,7 +47,8 @@
                         $('#confirmationModel').modal();
                         abp.notify.info('Saved Successfully');
                     }
-                    else {                       
+                    else {
+                        $('#spnError').html(data);
                         $('#errorModel').modal();
                     }
                                            

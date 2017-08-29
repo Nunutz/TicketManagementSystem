@@ -18,6 +18,7 @@
             if (validateInput() !== true)
                 return false;
 
+            $('#spnError').html("");
             e.preventDefault();
 
             abp.ui.setBusy(
@@ -47,6 +48,7 @@
                         abp.notify.info('Saved Successfully');
                     }
                     else {
+                        $('#spnError').html(data);
                         $('#errorModel').modal();
                     }
                     

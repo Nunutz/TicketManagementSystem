@@ -16,8 +16,9 @@
         $('#btnTicket').click(function (e) {
 
             if (validateInput() !== true)
-                return;
+                return false;
 
+            $('#spnError').html("");
             e.preventDefault();
 
             abp.ui.setBusy(
@@ -47,6 +48,7 @@
                         abp.notify.info('Saved Successfully');
                     }
                     else {
+                        $('#spnError').html(data);
                         $('#errorModel').modal();
                     }
                     

@@ -10,7 +10,7 @@
 }
 
 <div class="container">
-    <form id="ticketForm" method="POST">
+    <form id="ticketForm" method="post">
         @Html.AntiForgeryToken()
         <fieldset>
             <div class="form-horizontal">
@@ -242,7 +242,10 @@
                     <h4 class="modal-title" id="exampleModalLabel">Ticket Error</h4>
                 </div>
                 <div class="modal-body">
-                    Some error occured while uploading
+                    Some error occured while uploading<br />
+                    <span id="spnError">
+
+                    </span>
                 </div>
                 <div class="modal-footer">
                     <button id="btnCancel" type="button" class="btn btn-info">Close</button>

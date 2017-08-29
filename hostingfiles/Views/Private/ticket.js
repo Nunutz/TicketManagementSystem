@@ -25,9 +25,15 @@
         });
 
         $('#btnTicket').click(function (e) {
-
+           
             if (validateInput() != true)
-                return;
+            {
+               
+                return false;
+
+            }
+              
+            $('#spnError').html("");
 
             if ($('#hidAccessories').val() === '') {
                 $("#spnAccessories").html("please select atleast one");
@@ -41,6 +47,8 @@
 
             e.preventDefault();
       
+        
+
             abp.ui.setBusy(
                 $('#ticketForm'),
                 abp.ajax({
@@ -87,7 +95,7 @@
                         abp.notify.info('Saved Successfully');
                    
                     } else {
-
+                        $('#spnError').html(data);
                         $('#errorModel').modal();
                     }
                 })

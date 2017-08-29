@@ -8,6 +8,7 @@
             $scope.ticketId = 0;
             // call ticket service
             function getTickets() {
+
                 abp.ui.setBusy();
                 ticketService.getTicketsArray({})
                .success(function (result)
@@ -32,8 +33,7 @@
                         { data: "mobileNumber" },
                         { data: "product" },
                         { data: "status" },
-                        { data: "brand" },
-                        
+                        { data: "brand" },                        
                         { data: "phoneLocation" },
                         { data: "createdDate" },
                         { data: "action" },
@@ -71,6 +71,7 @@
 
             vm.openTicketModal = function (ticketId) {
                 var modalInstance = $modal.open({
+                    animation: true,
                     templateUrl: '/App/Main/views/tickets/ticket.cshtml',
                     controller: 'app.views.tickets.ticket as vm',
                     backdrop: 'static',
@@ -82,13 +83,21 @@
                 });
 
                 modalInstance.result.then(function () {
-                    getTickets();
+                    //getTickets();
+                    //reloadParent();
                 });
             };
 
 
             //load at initial stage
             getTickets();
+
+            function reloadParent()
+            {
+               // alert("reloadig")
+                location.reload();
+                
+            }
                        
             
         }

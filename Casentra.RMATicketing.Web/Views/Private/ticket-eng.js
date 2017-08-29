@@ -28,6 +28,8 @@
             if (validateInput() != true)
                 return false;
 
+            $('#spnError').html("");
+
             if ($('#hidAccessories').val() === '') {
                 $("#spnAccessories").html("please select atleast one");
                 return false;
@@ -85,7 +87,7 @@
                         $('#confirmationModel').modal();
                         abp.notify.info('Saved Successfully');
                     } else {
-
+                        $('#spnError').html(data);
                         $('#errorModel').modal();
                     }
                 })
@@ -234,6 +236,10 @@
         $('#btnConfirm').click(function () {
             window.location.href = '/private/enticket';
 
+        });
+
+        $('#btnCancel').click(function () {
+            window.location.href = '/private/enticket';
         });
 
         function validateEmail(email) {

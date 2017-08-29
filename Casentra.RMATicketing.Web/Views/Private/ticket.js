@@ -33,6 +33,7 @@
 
             }
               
+            $('#spnError').html("");
 
             if ($('#hidAccessories').val() === '') {
                 $("#spnAccessories").html("please select atleast one");
@@ -94,7 +95,7 @@
                         abp.notify.info('Saved Successfully');
                    
                     } else {
-
+                        $('#spnError').html(data);
                         $('#errorModel').modal();
                     }
                 })

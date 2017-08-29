@@ -57,6 +57,6 @@ E:\UpWork\Ticketing\GitHub\TicketManagementSystem\Casentra.RMATicketing.Core\bin
 E:\UpWork\Ticketing\GitHub\TicketManagementSystem\Casentra.RMATicketing.Core\bin\Debug\Nito.AsyncEx.Concurrent.xml
 E:\UpWork\Ticketing\GitHub\TicketManagementSystem\Casentra.RMATicketing.Core\bin\Debug\Nito.AsyncEx.Enlightenment.xml
 E:\UpWork\Ticketing\GitHub\TicketManagementSystem\Casentra.RMATicketing.Core\bin\Debug\System.Collections.Immutable.xml
-E:\UpWork\Ticketing\GitHub\TicketManagementSystem\Casentra.RMATicketing.Core\obj\Debug\Casentra.RMATicketing.Core.csprojResolveAssemblyReference.cache
 E:\UpWork\Ticketing\GitHub\TicketManagementSystem\Casentra.RMATicketing.Core\obj\Debug\Casentra.RMATicketing.Core.dll
 E:\UpWork\Ticketing\GitHub\TicketManagementSystem\Casentra.RMATicketing.Core\obj\Debug\Casentra.RMATicketing.Core.pdb
+E:\UpWork\Ticketing\GitHub\TicketManagementSystem\Casentra.RMATicketing.Core\obj\Debug\Casentra.RMATicketing.Core.csprojResolveAssemblyReference.cache
