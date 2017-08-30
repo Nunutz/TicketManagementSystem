@@ -130,7 +130,7 @@ namespace Casentra.RMATicketing.Web.Controllers
         /// <returns></returns>
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        public async Task<JsonResult> SaveTicket(TicketModel model, string returnUrl = "", string returnUrlHash = "")
+        public async Task<JsonResult> SaveTicket(TicketModel model)
         {
             try
             {             

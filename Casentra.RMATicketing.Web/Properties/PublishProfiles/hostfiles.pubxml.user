@@ -310,7 +310,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/22/2017 16:38:55</publishTime>
     </File>
     <File Include="bin/Casentra.RMATicketing.Web.dll">
-      <publishTime>08/29/2017 16:28:51</publishTime>
+      <publishTime>08/30/2017 17:22:49</publishTime>
     </File>
     <File Include="bin/Casentra.RMATicketing.WebApi.dll">
       <publishTime>08/22/2017 16:39:03</publishTime>
@@ -781,13 +781,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/29/2017 20:13:59</publishTime>
     </File>
     <File Include="Content/assets/plugins/fullcalendar/js/fullcalendar.min.js">
-      <publishTime>04/29/2017 20:14:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/assets/plugins/gmaps/gmaps.min.js">
-      <publishTime>04/29/2017 20:14:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/assets/plugins/ion-rangeslider/ion.rangeSlider.css">
-      <publishTime>04/29/2017 20:14:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/assets/plugins/ion-rangeslider/ion.rangeSlider.min.js">
       <publishTime>04/29/2017 20:14:01</publishTime>
@@ -1138,7 +1138,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/29/2017 09:19:56</publishTime>
     </File>
     <File Include="Properties/PublishProfiles/hostfiles.pubxml.user">
-      <publishTime>08/22/2017 16:41:32</publishTime>
+      <publishTime>08/30/2017 07:31:19</publishTime>
     </File>
     <File Include="Scripts/angular-animate.js">
       <publishTime>04/29/2017 20:14:17</publishTime>
@@ -2293,40 +2293,40 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/29/2017 20:14:59</publishTime>
     </File>
     <File Include="Scripts/i18n/angular-locale_fur-it.js">
-      <publishTime>04/29/2017 20:15:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/i18n/angular-locale_fur.js">
-      <publishTime>04/29/2017 20:15:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/i18n/angular-locale_fy-nl.js">
-      <publishTime>04/29/2017 20:15:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/i18n/angular-locale_fy.js">
-      <publishTime>04/29/2017 20:15:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/i18n/angular-locale_ga-ie.js">
-      <publishTime>04/29/2017 20:15:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/i18n/angular-locale_ga.js">
-      <publishTime>04/29/2017 20:15:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/i18n/angular-locale_gd-gb.js">
-      <publishTime>04/29/2017 20:15:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/i18n/angular-locale_gd.js">
-      <publishTime>04/29/2017 20:15:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/i18n/angular-locale_gl-es.js">
-      <publishTime>04/29/2017 20:15:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/i18n/angular-locale_gl.js">
-      <publishTime>04/29/2017 20:15:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/i18n/angular-locale_gsw-ch.js">
-      <publishTime>04/29/2017 20:15:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/i18n/angular-locale_gsw-fr.js">
-      <publishTime>04/29/2017 20:15:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/i18n/angular-locale_gsw-li.js">
       <publishTime>04/29/2017 20:15:01</publishTime>
@@ -3691,28 +3691,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/29/2017 16:15:46</publishTime>
     </File>
     <File Include="Views/Private/Client.cshtml">
-      <publishTime>08/29/2017 16:09:12</publishTime>
+      <publishTime>08/30/2017 07:27:35</publishTime>
     </File>
     <File Include="Views/Private/client.js">
       <publishTime>08/29/2017 16:23:37</publishTime>
     </File>
     <File Include="Views/Private/EngClient.cshtml">
-      <publishTime>08/29/2017 16:14:34</publishTime>
+      <publishTime>08/30/2017 07:27:53</publishTime>
     </File>
     <File Include="Views/Private/EnTicket.cshtml">
-      <publishTime>08/29/2017 16:18:48</publishTime>
+      <publishTime>08/30/2017 07:28:07</publishTime>
     </File>
     <File Include="Views/Private/ticket-eng.js">
       <publishTime>08/29/2017 16:21:21</publishTime>
     </File>
     <File Include="Views/Private/Ticket.cshtml">
-      <publishTime>08/29/2017 16:16:45</publishTime>
+      <publishTime>08/30/2017 07:28:14</publishTime>
     </File>
     <File Include="Views/Private/ticket.js">
       <publishTime>08/29/2017 16:18:16</publishTime>
     </File>
     <File Include="Views/Professional/EnTicket.cshtml">
-      <publishTime>08/29/2017 16:19:36</publishTime>
+      <publishTime>08/30/2017 07:28:36</publishTime>
     </File>
     <File Include="Views/Professional/IMEI.cshtml">
       <publishTime>08/21/2017 13:37:24</publishTime>
@@ -3727,7 +3727,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/29/2017 16:20:06</publishTime>
     </File>
     <File Include="Views/Professional/Ticket.cshtml">
-      <publishTime>08/29/2017 16:19:15</publishTime>
+      <publishTime>08/30/2017 07:28:27</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>04/29/2017 20:15:44</publishTime>

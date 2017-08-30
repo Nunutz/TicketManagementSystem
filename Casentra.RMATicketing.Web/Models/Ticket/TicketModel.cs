@@ -13,7 +13,7 @@ namespace Casentra.RMATicketing.Web.Models.Ticket
                     
         //ticket informaion
         public string IssueSummary { get; set; }
-        [Required]
+        //[Required]
         public DateTime PurchasedDate { get; set; }
         public int TicketStatusId { get; set; }
 
@@ -32,15 +32,15 @@ namespace Casentra.RMATicketing.Web.Models.Ticket
         public int AccessoryId { get; set; }
 
         public int BoughtAtId { get; set; }
-        [Required]
+       // [Required]
         public string IMEINumber { get; set; }
 
-        [Required]
+        //[Required]
         public string Password { get; set; }
-        [Required]
+       // [Required]
         public string IcloudAddress { get; set; }
 
-        [Required]
+       // [Required]
         public string IcloudPassword { get; set; }
                    
         public List<SelectListItem> BoughtAts { get; set; }

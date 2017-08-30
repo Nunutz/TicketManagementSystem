@@ -290,7 +290,7 @@ namespace Casentra.RMATicketing.Web.ViewModelBuilder
             model.TicketBoardId = 1;
             model.TicketPriorityId = 2;
             model.TicketStatusId = 0;
-
+          
             var ticket = new Ticket
             {
                 Summary = model.IssueSummary,
